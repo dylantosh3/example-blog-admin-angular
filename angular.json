@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "woz-blog-team2"
+    }
+  },
+  "defaultProject": "woz-blog-team2",
+  "cli": {
+    "analytics": false
+  }
 }
