@@ -1,6 +1,7 @@
 <ol class="breadcrumb float-right">
   <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
   <li class="breadcrumb-item active">Users</li>
+  <li class="breadcrumb-item"><a routerLink="/articles">articles</a></li>
 </ol>
 <div class="card">
   <div class="header">
@@ -9,32 +10,32 @@
   <div class="content">
     <div *ngIf="feedback" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
     <form *ngIf="users" #editForm="ngForm" (ngSubmit)="save()">
-    
+
       <div class="form-group">
         <label>User Id</label>
-        {{users.id || 'n/a'}} 
+        {{users.id || 'n/a'}}
       </div>
-    
+
       <div class="form-group">
         <label for="firstname">First Name</label>
         <input [(ngModel)]="users.firstname" id="firstname" name="firstname" class="form-control">
       </div>
-    
+
       <div class="form-group">
         <label for="lastname">Last Name</label>
         <input [(ngModel)]="users.lastname" id="lastname" name="lastname" class="form-control">
       </div>
-    
+
       <div class="form-group">
         <label for="username">Description</label>
         <input [(ngModel)]="users.username" id="username" name="username" class="form-control">
       </div>
-    
+
       <div class="form-group">
         <label for="email">Email</label>
         <input [(ngModel)]="users.email" id="email" name="email" class="form-control">
       </div>
-    
+
       <button type="submit" class="btn btn-primary" [disabled]="!editForm.form.valid">Save</button>
       <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
     </form>
