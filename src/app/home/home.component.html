@@ -1,6 +1,6 @@
-<div class="jumbotron">
+<div class="jumbotron" *ngIf="isAuthenticated">
   <h1 class="display-6">Admin Dashboard</h1>
   <hr class="my-4">
   <h4><p>Start editing articles</p></h4>
-  <a class="btn btn-primary btn-med" routerLink="/articles" *ngIf="isAuthenticated" role="button">View Articles</a>
+  <a class="btn btn-primary btn-med" routerLink="/articles" role="button">View Articles</a>
 </div>
