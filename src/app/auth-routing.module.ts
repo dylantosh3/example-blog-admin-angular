@@ -7,6 +7,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
 import { AuthInterceptor } from './shared/okta/auth.interceptor';
 
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+
+
 const oktaConfig = {
   issuer: 'https://dev-205800.okta.com/oauth2/default',
   redirectUri: window.location.origin + '/callback',
@@ -34,7 +37,8 @@ const routes: Routes = [
     CommonModule,
     HttpClientModule,
     OktaAuthModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgZorroAntdModule
   ],
   providers: [
     { provide: OKTA_CONFIG, useValue: oktaConfig },

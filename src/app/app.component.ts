@@ -7,8 +7,9 @@ import { OktaAuthService } from '@okta/okta-angular';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'woz-blog-team2';
+  title = 'Woz-Blog-Team 2';
   isAuthenticated: boolean;
+  isCollapsed = true;
 
   constructor(public oktaAuth: OktaAuthService) {
   }

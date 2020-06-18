@@ -7,16 +7,19 @@ import { UsersModule } from './users/users.module';
 import { ArticlesModule } from './articles/articles.module';
 import { CommentsModule } from './comments/comments.module';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AuthRoutingModule,
     UsersModule,
     ArticlesModule,
-    CommentsModule
+    CommentsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
