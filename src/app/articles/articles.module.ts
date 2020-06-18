@@ -6,12 +6,14 @@ import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { ArticlesEditComponent } from './articles-edit/articles-edit.component';
 import { ArticlesService } from './articles.service';
 import { ARTICLES_ROUTES } from './articles.routes';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(ARTICLES_ROUTES)
+    RouterModule.forChild(ARTICLES_ROUTES),
+    NgbModule
   ],
   declarations: [
     ArticlesListComponent,
