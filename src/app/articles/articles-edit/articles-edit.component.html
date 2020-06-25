@@ -1,0 +1,44 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+  <li class="breadcrumb-item"><a routerLink="/users">Users</a></li>
+  <li class="breadcrumb-item active">Articles</li>
+  <li class="breadcrumb-item"><a routerLink="/comments">Comments</a></li>
+</ol>
+<div class="card">
+  <div class="header">
+    <h2 class="title">Articles Detail</h2>
+  </div>
+  <div class="content">
+    <div *ngIf="feedback" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
+    <form *ngIf="articles" #editForm="ngForm" (ngSubmit)="save()">
+
+      <div class="form-group">
+        <label>Id</label>
+        {{articles.id || 'n/a'}}
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input [(ngModel)]="articles.title" id="title" name="title" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="username">Author's Username</label>
+        <input [(ngModel)]="articles.username" id="username" name="username" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input [(ngModel)]="articles.description" id="description" name="description" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="body">Body</label>
+        <input [(ngModel)]="articles.body" id="body" name="body" class="form-control">
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!editForm.form.valid">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+</div>
